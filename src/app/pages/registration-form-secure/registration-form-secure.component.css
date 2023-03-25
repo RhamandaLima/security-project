@@ -1,0 +1,117 @@
+.form {
+  border: none;
+  width: 700px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-top: 15px;
+  box-shadow: 0px 0px 62px -25px rgba(52, 73, 115, 1);
+}
+
+.form-header {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  color: #344973;
+}
+
+.form-header-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #344973;
+
+}
+
+.form-content-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #40557e;
+}
+
+.form-content-warn {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  color: #344973;
+}
+
+.form-personal-info,
+.form-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieds-1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-fied-register-name {
+  width: 80%;
+}
+
+.form-fied-register-cpf {
+  width: 50%;
+}
+
+.form-fied-register-user {
+  width: 50%;
+}
+
+.form-fied-register-email {
+  width: 100%;
+}
+
+/* .form-user {
+  margin-top: 25px;
+} */
+
+.input-size {
+  font-size: 0.8rem !important;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 45px !important;
+}
+
+::ng-deep
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+  .mat-mdc-form-field-infix {
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+
+::ng-deep .mat-mdc-form-field-icon-suffix {
+  align-self: stretch !important;
+}
+
+::ng-deep .mat-mdc-form-field-hint-wrapper {
+  padding: 0 2px !important;
+}
+
+.button-register {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  padding: 9px 16px;
+  font-size: 1rem;
+  background-color: #344973;
+  border: none;
+  border-radius: 25px 10px;
+  align-items: center;
+  gap: 4px;
+  width: 164px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.button-register:hover {
+  background-color: #435e94;
+  cursor: pointer;
+}

@@ -1,3 +1,4 @@
+import { RegistrationFormSecureComponent } from './pages/registration-form-secure/registration-form-secure.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -19,8 +20,12 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'safe-login',
+        path: 'login',
         component: LoginComponent,
+      },
+      {
+        path: 'secure-registration-form',
+        component: RegistrationFormSecureComponent,
       }
     ]
   }

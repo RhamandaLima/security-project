@@ -16,6 +16,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { RegistrationFormSecureComponent } from './pages/registration-form-secure/registration-form-secure.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    RegistrationFormSecureComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +40,11 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
     MatIconModule,
     MatCardModule,
     MatDividerModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
