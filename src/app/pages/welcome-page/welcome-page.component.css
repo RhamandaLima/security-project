@@ -18,18 +18,16 @@ h1 {
 }
 
 .card-home-image {
-  width: 200px;
+  width: 180px;
 }
 
-.mat-card {
-  background-color: #344973;
-  color: #fff;
+.card {
+  /*background-color: #344973;*/
+  color: #0a1326;
   width: 800px;
   height: 120px;
   margin: 0 auto;
   padding-top: 13px;
-  border-radius: 500px;
-  box-shadow: 1px 2px 2px #0a1326;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,5 +80,50 @@ h1 {
 
 .card-login-green:hover {
   background-color: rgb(33, 117, 38);
+  cursor: pointer;
+}
+
+.buttons-register {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-register-green {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 16px;
+  background-color: #1fa65a;
+  border: none;
+  border-radius: 25px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 164px;
+}
+
+.button-register-green:hover {
+  background-color: #65bf8c;
+  cursor: pointer;
+}
+
+.button-register-red {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 16px;
+  background-color: red;
+  border: none;
+  border-radius: 10px 25px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 164px;
+}
+
+.button-register-red:hover {
+  background-color: rgb(236, 72, 72);
   cursor: pointer;
 }

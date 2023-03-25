@@ -122,11 +122,3 @@ h1 {
   cursor: pointer;
   background-color: #dadde0;
 }
-
-.card-login-green {
-  background-color: rgb(41, 150, 46);
-  border: none;
-  width: 24.5px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
