@@ -1,0 +1,22 @@
+.footer {
+  background-color: #344973;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  justify-content: space-between;
+  gap: 20px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.alinha-time {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.time {
+  font-size: 0.8rem;
+}

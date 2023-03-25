@@ -1,0 +1,35 @@
+<div class="cabecalho">
+  <h1>Identity and Authentication Failure Control</h1>
+  <mat-divider></mat-divider>
+</div>
+
+<div class="cards-status">
+  <mat-card class="mat-card">
+    <p class="login-title">LOGIN</p>
+    <mat-card class="card-login-green" routerLink="/safe-login">
+      <span class="material-symbols-outlined icon-red">
+        verified_user
+      </span>
+    </mat-card>
+    <mat-divider class="second-divider"></mat-divider>
+    <div class="formulario-login">
+      <div class="alinha">
+        <form action="" class="formulario">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="" value="" formControlName="categoria">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="" value="" formControlName="valor" type="password">
+          </mat-form-field>
+        </form>
+        <div class="buttons-login">
+          <button class="botao-salvar">Acessar</button>
+          <button class="botao-cancelar" routerLink="/">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

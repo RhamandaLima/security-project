@@ -1,0 +1,132 @@
+.cabecalho {
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  color: #0a1326;
+  margin-left: 15px;
+}
+
+.cards-status {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.mat-card {
+  background-color: #6b7da0;
+  color: #fff;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.login-title {
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 0;
+  margin-top: 10px;
+}
+
+.second-divider {
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.cabecalho {
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  color: #0a1326;
+  margin-left: 15px;
+}
+
+.formulario-login {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.alinha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-form-field {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.example-full-width {
+  margin-left: 10px;
+}
+
+.buttons-login {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.botao-salvar {
+  background-color: #344973;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-family: "Source Sans Pro", sans-serif;
+  border-radius: 4px;
+  width: 86.08px;
+}
+
+.botao-salvar:hover {
+  cursor: pointer;
+  background-color: #0a1326;
+}
+
+.div {
+  margin-top: 10px;
+}
+
+.botao-cancelar {
+  background-color: #edf0f5;
+  font-weight: 600;
+  color: #0a1326;
+  border: none;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-family: "Source Sans Pro", sans-serif;
+  border-radius: 4px;
+}
+
+.botao-cancelar:hover {
+  cursor: pointer;
+  background-color: #dadde0;
+}
+
+.card-login-green {
+  background-color: rgb(41, 150, 46);
+  border: none;
+  width: 24.5px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
