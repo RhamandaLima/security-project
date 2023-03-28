@@ -19,7 +19,10 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
 import { RegistrationFormSecureComponent } from './pages/registration-form-secure/registration-form-secure.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { IConfig, NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
 
+export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -42,9 +45,13 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     MatDividerModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
+
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
