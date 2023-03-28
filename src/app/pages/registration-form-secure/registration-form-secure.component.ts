@@ -11,6 +11,11 @@ export class RegistrationFormSecureComponent implements OnInit {
   registrationForm!: FormGroup;
 
   today = new Date();
+  majority = new Date(
+    this.today.getFullYear() - 18,
+    this.today.getMonth(),
+    this.today.getDate()
+  );
 
   showPassword: boolean = false;
 
