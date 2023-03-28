@@ -27,7 +27,7 @@ export class RegistrationFormSecureComponent implements OnInit {
       cpf: ['', [Validators.required, this.validateCpf]],
       phone: ['', [Validators.required, Validators.maxLength(15)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(255)]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12), this.validatePassword]]
     })
   }
 
@@ -35,7 +35,7 @@ export class RegistrationFormSecureComponent implements OnInit {
     console.log(this.registrationForm)
   }
 
-  private validateCpf(control: AbstractControl) {
+  private validateCpf(control: AbstractControl): ValidationErrors | null {
 
     const cpf = control.value;
 
@@ -77,5 +77,21 @@ export class RegistrationFormSecureComponent implements OnInit {
     if (valid) return null;
 
     return { cpfInvalid: true };
+  }
+
+  private validatePassword(control: AbstractControl): ValidationErrors | null {
+
+    const password = control.value;
+    const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$');
+
+    if (!password) {
+      return null;
+    }
+
+    if (!regex.test(password)) {
+      return { passwordInvalid: true }
+    }
+
+    return null
   }
 }
