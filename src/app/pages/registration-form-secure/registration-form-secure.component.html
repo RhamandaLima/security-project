@@ -17,10 +17,11 @@
 
             <mat-form-field appearance="outline" floatLabel="always">
               <mat-label class="input-size">Data de nascimento</mat-label>
-              <input matInput [matDatepicker]="picker" readonly class="input-size" formControlName="birthday">
+              <input matInput [max]="today" [matDatepicker]="picker" readonly class="input-size"
+                formControlName="birthday">
               <mat-hint class="form-content-warn">Dica:</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker">
-                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
               </mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
