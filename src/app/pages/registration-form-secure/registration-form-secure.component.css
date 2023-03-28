@@ -114,3 +114,8 @@
   background-color: #435e94;
   cursor: pointer;
 }
+
+.button-password:hover {
+  cursor: pointer;
+  color: #435e94;
+}

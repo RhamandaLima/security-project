@@ -10,6 +10,8 @@ export class RegistrationFormSecureComponent implements OnInit {
 
   registrationForm!: FormGroup;
 
+  showPassword: boolean = false;
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
