@@ -25,9 +25,14 @@
               <mat-label class="input-size">Data de nascimento</mat-label>
               <input matInput [max]="majority" [matDatepicker]="picker" readonly class="input-size"
                 formControlName="birthday">
-              <mat-hint class="form-content-warn">
+              <mat-hint *ngIf="!birthday?.touched || !birthday?.errors" class="form-content-warn">
                 Apenas maiores de 18 anos.
               </mat-hint>
+              <div *ngIf="birthday?.touched && birthday?.errors" class="hint-left">
+                <mat-hint class="form-content-warn hint-left" *ngIf="birthday?.errors?.['required']">
+                  A data de nascimento é obrigatória.
+                </mat-hint>
+              </div>
               <mat-datepicker-toggle matIconSuffix [for]="picker">
                 <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
               </mat-datepicker-toggle>
