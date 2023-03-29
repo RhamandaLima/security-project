@@ -4,27 +4,42 @@
 </div>
 
 <div class="cards-status">
-  <mat-card class="mat-card">
-    <p class="login-title">LOGIN</p>
-    <mat-divider class="second-divider"></mat-divider>
-    <div class="formulario-login">
-      <div class="alinha">
-        <form action="" class="formulario">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>E-mail</mat-label>
-            <input matInput placeholder="" value="" formControlName="categoria">
-          </mat-form-field>
+  <div class="info-logins">
+    <mat-card class="mat-card">
+      <p class="login-title">LOGIN</p>
+      <mat-divider class="second-divider"></mat-divider>
+      <div class="formulario-login">
+        <div class="alinha">
+          <form class="formulario" [formGroup]="loginForm">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>E-mail</mat-label>
+              <input matInput placeholder="" value="" formControlName="email">
+            </mat-form-field>
+            <div *ngIf="email?.touched && email?.errors" class="hint-left">
+              <mat-hint class="form-content-warn hint-left" *ngIf="email?.errors?.['required']">
+                O e-mail é obrigatório.
+              </mat-hint>
+            </div>
 
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Senha</mat-label>
-            <input matInput placeholder="" value="" formControlName="valor" type="password">
-          </mat-form-field>
-        </form>
-        <div class="buttons-login">
-          <button class="botao-salvar">Acessar</button>
-          <button class="botao-cancelar" routerLink="/">Cancelar</button>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Senha</mat-label>
+              <input matInput placeholder="" value="" formControlName="password" type="password" autocomplete="off">
+            </mat-form-field>
+            <div *ngIf="password?.touched && password?.errors" class="hint-left">
+              <mat-hint class="form-content-warn hint-left" *ngIf="password?.errors?.['required']">
+                A senha é obrigatória.
+              </mat-hint>
+            </div>
+          </form>
+          <div class="buttons-login">
+            <button class="botao-salvar">Acessar</button>
+            <button class="botao-cancelar" routerLink="/">Cancelar</button>
+          </div>
         </div>
       </div>
-    </div>
-  </mat-card>
+    </mat-card>
+
+    <span class="new-register">Ainda não tem conta? <span class="new-register-link"
+        routerLink="/secure-registration-form">Cadastre-se.</span></span>
+  </div>
 </div>
