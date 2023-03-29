@@ -20,7 +20,8 @@ import { RegistrationFormSecureComponent } from './pages/registration-form-secur
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IConfig, NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask'
+import { IConfig, NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component'
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -33,7 +34,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     HomeComponent,
     LoginComponent,
     WelcomePageComponent,
-    RegistrationFormSecureComponent
+    RegistrationFormSecureComponent,
+    RegistrationConfirmationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component';
 import { RegistrationFormSecureComponent } from './pages/registration-form-secure/registration-form-secure.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -26,7 +27,11 @@ const routes: Routes = [
       {
         path: 'secure-registration-form',
         component: RegistrationFormSecureComponent,
-      }
+      },
+      {
+        path: 'confirm-registration',
+        component: RegistrationConfirmationComponent,
+      },
     ]
   }
 ];
