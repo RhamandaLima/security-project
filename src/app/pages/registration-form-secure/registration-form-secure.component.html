@@ -12,14 +12,16 @@
             <mat-form-field appearance="outline" class="form-fied-register-name" floatLabel="always">
               <mat-label class="input-size">Nome completo</mat-label>
               <input matInput type="text" class="input-size" formControlName="name" maxlength="101">
-              <mat-hint class="form-content-warn">Dica:</mat-hint>
+              <mat-hint class="form-content-warn"></mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="outline" floatLabel="always">
               <mat-label class="input-size">Data de nascimento</mat-label>
               <input matInput [max]="majority" [matDatepicker]="picker" readonly class="input-size"
                 formControlName="birthday">
-              <mat-hint class="form-content-warn">Dica:</mat-hint>
+              <mat-hint class="form-content-warn">
+                Apenas maiores de 18 anos.
+              </mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker">
                 <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
               </mat-datepicker-toggle>
@@ -31,13 +33,13 @@
             <mat-form-field appearance="outline" class="form-fied-register-cpf" floatLabel="always">
               <mat-label class="input-size">CPF</mat-label>
               <input matInput type="text" class="input-size" formControlName="cpf" mask="000.000.000-00" maxlength="14">
-              <mat-hint class="form-content-warn">Dica: </mat-hint>
+              <mat-hint class="form-content-warn"></mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-fied-register-cpf" floatLabel="always">
               <mat-label class="input-size">Telefone</mat-label>
               <input matInput class="input-size" formControlName="phone" maxlength="15" mask="(00) 00000-0000">
-              <mat-hint class="form-content-warn">Dica: </mat-hint>
+              <mat-hint class="form-content-warn"></mat-hint>
             </mat-form-field>
           </div>
         </div>
@@ -51,7 +53,7 @@
             <mat-form-field appearance="outline" class="form-fied-register-user" floatLabel="always">
               <mat-label class="input-size">E-mail:</mat-label>
               <input matInput type="text" class="input-size" formControlName="email">
-              <mat-hint class="form-content-warn">Dica: o e-mail será utilizado para realizar o login</mat-hint>
+              <mat-hint class="form-content-warn">O e-mail será utilizado para realizar o login.</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-fied-register-user" floatLabel="always">
@@ -60,7 +62,9 @@
                 class="input-size" formControlName="password" autocomplete="off">
               <mat-icon matSuffix class="button-password" (click)="showPassword = !showPassword">
                 {{ showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-              <mat-hint class="form-content-warn">Dica: </mat-hint>
+              <mat-hint class="form-content-warn">A senha deve conter entre 6 a 12 caracteres, pelo
+                menos uma
+                letra maiúscula, uma minúscula, um número e um símbolo.</mat-hint>
             </mat-form-field>
           </div>
         </div>

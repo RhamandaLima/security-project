@@ -36,6 +36,7 @@
   font-weight: 400;
   font-size: 0.6rem;
   color: #344973;
+  line-height: normal;
 }
 
 .form-personal-info,
@@ -118,4 +119,8 @@
 .button-password:hover {
   cursor: pointer;
   color: #435e94;
+}
+
+p {
+  margin-top: 22px;
 }
