@@ -1,3 +1,4 @@
+import { ListComponent } from './components/list/list.component';
 import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component';
 import { RegistrationFormSecureComponent } from './pages/registration-form-secure/registration-form-secure.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'confirm-registration',
         component: RegistrationConfirmationComponent,
+      },
+      {
+        path: 'list',
+        component: ListComponent,
       },
     ]
   }

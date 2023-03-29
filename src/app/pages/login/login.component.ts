@@ -1,16 +1,17 @@
+import { NewUserStoreService } from 'src/app/store/new-user-store.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private newUserStore: NewUserStoreService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -23,8 +24,8 @@ export class LoginComponent {
     })
   }
 
-  public registerDataLoginForm(): any {
-    console.log(this.loginForm);
+  public Login(): any {
+    this.newUserStore.setFormLoginValue(this.loginForm.value);
   }
 
   get email() {

@@ -1,3 +1,4 @@
+import { NewUserStoreService } from 'src/app/store/new-user-store.service';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
@@ -19,7 +20,7 @@ export class RegistrationFormSecureComponent implements OnInit {
 
   showPassword: boolean = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private newUserStore: NewUserStoreService) { }
 
   ngOnInit(): void {
     this.createRegistrationForm();
@@ -37,7 +38,7 @@ export class RegistrationFormSecureComponent implements OnInit {
   }
 
   public registerDataForm(): any {
-    console.log(this.registrationForm)
+    this.newUserStore.setFormValue(this.registrationForm.value);
   }
 
   private validateCpf(control: AbstractControl): ValidationErrors | null {

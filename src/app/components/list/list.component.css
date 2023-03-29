@@ -1,0 +1,48 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30em;
+  height: 20vw;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2em;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.25);
+}
+
+.SpanLi {
+  color: #188fed;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.ListUl {
+  text-align: left;
+  width: 100%;
+  list-style: none;
+  padding-left: 0.5em;
+}
+.ListUl > li {
+  margin: 0.5em;
+}
+
+.SpanText {
+  color: #696969;
+  font-weight: 700;
+}
+
+.SpanText:hover {
+  color: #188fed;
+  cursor: pointer;
+}
+
+.SmallTitle {
+  color: #696969;
+  font-weight: 100;
+}
+
+.Sair {
+  width: 100%;
+  text-align: right;
+  padding-right: 0.7em;
+}

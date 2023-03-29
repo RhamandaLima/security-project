@@ -1,0 +1,26 @@
+<div class="box">
+
+  <div class='Sair'>
+    <h5 class='SmallTitle'>
+      {{ userData.name }} |
+      <span class='SpanText' (click)="logOut()">
+        Log out
+      </span>
+    </h5>
+  </div>
+
+  <div>
+    <h2>Perfil Pessoal</h2>
+    <div class="ListUl">
+      <li>
+        <span class="SpanLi">Profissão:</span> {{ userData.name }}
+      </li>
+      <li>
+        <span class="SpanLi">Cidade:</span> {{ userData.birthday }}
+      </li>
+      <li>
+        <span class="SpanLi">Web-site:</span> {{ userData.email }}
+      </li>
+    </div>
+  </div>
+</div>

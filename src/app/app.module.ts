@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,7 +22,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IConfig, NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component'
+import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component';
+import { ListComponent } from './components/list/list.component'
+import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -35,7 +38,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     LoginComponent,
     WelcomePageComponent,
     RegistrationFormSecureComponent,
-    RegistrationConfirmationComponent
+    RegistrationConfirmationComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,10 +54,10 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     MatNativeDateModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-    NgxMaskPipe
-
+    NgxMaskPipe,
+    HttpClientModule
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, provideNgxMask()],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true }, { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

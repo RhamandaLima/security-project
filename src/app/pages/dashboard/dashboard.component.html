@@ -4,14 +4,14 @@
     src="https://blush.design/api/download?shareUri=7nrLQevtw03i-tWg&c=Skin_0%7E1fad66-0.1%7Efcb7a0&w=800&h=800&fm=png"
     alt="">
   <div class="dashboard-section">
-    <h3 class="dashboard-subtitle">Você acaba de logar com segurança.</h3>
+    <h3 class="dashboard-subtitle"><strong>{{ userData.name }}</strong>, você acaba de logar com segurança.</h3>
     <img class="dashboard-blink"
       src="https://blush.design/api/download?shareUri=iP9FVsR240PwKjZH&c=Monochromatic_0%7E60d6e1_Skin_0%7Eb18058&w=800&h=800&fm=png"
       alt="">
   </div>
 
   <div>
-    <button class="button-out" routerLink="/">
+    <button class="button-out" (click)="logOut()">
       Sair
     </button>
   </div>

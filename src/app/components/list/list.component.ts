@@ -4,11 +4,11 @@ import { User } from 'src/app/services/user';
 import { NewUserStoreService } from 'src/app/store/new-user-store.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class ListComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = new Array<Subscription>();
   public userData!: User;
 
