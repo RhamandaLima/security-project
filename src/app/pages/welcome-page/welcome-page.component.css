@@ -94,14 +94,13 @@ h1 {
   font-family: "Source Sans Pro", sans-serif;
   color: #fff;
   font-weight: 600;
-  padding: 9px 16px;
+  padding: 9px 100px;
   background-color: #1fa65a;
   border: none;
   border-radius: 25px 10px;
   display: flex;
   align-items: center;
   gap: 4px;
-  width: 164px;
 }
 
 .button-register-green:hover {
@@ -113,14 +112,13 @@ h1 {
   font-family: "Source Sans Pro", sans-serif;
   color: #fff;
   font-weight: 600;
-  padding: 9px 16px;
+  padding: 9px 100px;
   background-color: red;
   border: none;
   border-radius: 10px 25px;
   display: flex;
   align-items: center;
   gap: 4px;
-  width: 164px;
 }
 
 .button-register-red:hover {

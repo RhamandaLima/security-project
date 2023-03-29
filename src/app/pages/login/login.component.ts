@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
+  showPassword: boolean = false;
+
   constructor(private newUserStore: NewUserStoreService, private fb: FormBuilder) { }
 
   ngOnInit(): void {

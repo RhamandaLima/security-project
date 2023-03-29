@@ -23,7 +23,10 @@
 
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Senha</mat-label>
-              <input matInput placeholder="" value="" formControlName="password" type="password" autocomplete="off">
+              <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" type="password"
+                autocomplete="off">
+              <mat-icon matSuffix class="button-password" (click)="showPassword = !showPassword">
+                {{ showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
             <div *ngIf="password?.touched && password?.errors" class="hint-left">
               <mat-hint class="form-content-warn hint-left" *ngIf="password?.errors?.['required']">

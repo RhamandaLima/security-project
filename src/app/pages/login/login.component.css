@@ -157,3 +157,12 @@ h1 {
   cursor: pointer;
   color: #344973;
 }
+
+.button-password {
+  color: #2e4168;
+}
+
+.button-password:hover {
+  cursor: pointer;
+  color: #435e94;
+}
