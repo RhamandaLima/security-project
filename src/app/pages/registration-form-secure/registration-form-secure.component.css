@@ -124,3 +124,16 @@
 p {
   margin-top: 22px;
 }
+
+.hint-left {
+  color: #f44336;
+  margin-left: -8px !important;
+  margin-top: 8px;
+  line-height: 70% !important;
+  width: 320px;
+}
+
+.hint-password {
+  margin-left: 0 !important;
+  margin-top: 5px;
+}

@@ -12,7 +12,13 @@
             <mat-form-field appearance="outline" class="form-fied-register-name" floatLabel="always">
               <mat-label class="input-size">Nome completo</mat-label>
               <input matInput type="text" class="input-size" formControlName="name" maxlength="101">
-              <mat-hint class="form-content-warn"></mat-hint>
+              <div *ngIf="name?.touched && name?.errors" class="hint-left">
+                <mat-hint class="form-content-warn hint-left" *ngIf="name?.errors?.['maxlength']">
+                  O nome deve ter no máximo 100 caracteres.
+                </mat-hint>
+                <mat-hint class="form-content-warn hint-left" *ngIf="name?.errors?.['required']">O nome é
+                  obrigatório.</mat-hint>
+              </div>
             </mat-form-field>
 
             <mat-form-field appearance="outline" floatLabel="always">
@@ -33,13 +39,24 @@
             <mat-form-field appearance="outline" class="form-fied-register-cpf" floatLabel="always">
               <mat-label class="input-size">CPF</mat-label>
               <input matInput type="text" class="input-size" formControlName="cpf" mask="000.000.000-00" maxlength="14">
-              <mat-hint class="form-content-warn"></mat-hint>
+              <div *ngIf="cpf?.touched && cpf?.errors" class="hint-left">
+                <mat-hint class="form-content-warn hint-left" *ngIf="cpf?.errors?.['cpfInvalid']">
+                  Insira um CPF válido.
+                </mat-hint>
+                <mat-hint class="form-content-warn hint-left" *ngIf="cpf?.errors?.['required']">
+                  O CPF é obrigatório.
+                </mat-hint>
+              </div>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-fied-register-cpf" floatLabel="always">
               <mat-label class="input-size">Telefone</mat-label>
               <input matInput class="input-size" formControlName="phone" maxlength="15" mask="(00) 00000-0000">
-              <mat-hint class="form-content-warn"></mat-hint>
+              <div *ngIf="phone?.touched && phone?.errors" class="hint-left">
+                <mat-hint class="form-content-warn hint-left" *ngIf="phone?.errors?.['required']">
+                  O telefone é obrigatório.
+                </mat-hint>
+              </div>
             </mat-form-field>
           </div>
         </div>
@@ -53,7 +70,19 @@
             <mat-form-field appearance="outline" class="form-fied-register-user" floatLabel="always">
               <mat-label class="input-size">E-mail:</mat-label>
               <input matInput type="text" class="input-size" formControlName="email">
-              <mat-hint class="form-content-warn">O e-mail será utilizado para realizar o login.</mat-hint>
+              <mat-hint *ngIf="!email?.touched || !email?.errors" class="form-content-warn">O e-mail será utilizado para
+                realizar o login.</mat-hint>
+              <div *ngIf="email?.touched && email?.errors" class="hint-left">
+                <mat-hint class="form-content-warn hint-left" *ngIf="email?.errors?.['email']">
+                  Insira um e-mail válido.
+                </mat-hint>
+                <mat-hint class="form-content-warn hint-left" *ngIf="email?.errors?.['required']">
+                  O e-mail é obrigatório.
+                </mat-hint>
+                <mat-hint class="form-content-warn hint-left" *ngIf="email?.errors?.['maxlength']">
+                  O e-mail deve ter no máximo 100 caracteres.
+                </mat-hint>
+              </div>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-fied-register-user" floatLabel="always">
@@ -62,15 +91,27 @@
                 class="input-size" formControlName="password" autocomplete="off">
               <mat-icon matSuffix class="button-password" (click)="showPassword = !showPassword">
                 {{ showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-              <mat-hint class="form-content-warn">A senha deve conter entre 6 a 12 caracteres, pelo
+              <mat-hint *ngIf="!password?.touched || !password?.errors" class="form-content-warn">A senha deve conter
+                entre 6 a 12 caracteres, pelo
                 menos uma
                 letra maiúscula, uma minúscula, um número e um símbolo.</mat-hint>
+              <div *ngIf="password?.touched && password?.errors" class="hint-left">
+                <mat-hint class="form-content-warn hint-left hint-password"
+                  *ngIf="password?.errors?.['passwordInvalid']">A senha
+                  deve conter entre 6 a 12 caracteres, pelo menos uma letra maiúscula, uma minúscula, um
+                  número e um símbolo.
+                </mat-hint>
+                <mat-hint class="form-content-warn hint-left" *ngIf="password?.errors?.['required']">
+                  A senha é obrigatória.
+                </mat-hint>
+              </div>
             </mat-form-field>
           </div>
         </div>
       </div>
     </form>
-    <p class="form-content-warn">Ao preencher o formulário de cadastro você permite que a IAF Control salve as suas
+    <p id="space-password-hint" class="form-content-warn space-password-hint">Ao preencher o formulário de cadastro você
+      permite que a IAF Control salve as suas
       informações.</p>
   </mat-card-content>
 

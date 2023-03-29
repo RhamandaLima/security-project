@@ -99,4 +99,28 @@ export class RegistrationFormSecureComponent implements OnInit {
 
     return null
   }
+
+  get name() {
+    return this.registrationForm.get('name');
+  }
+
+  get birthday() {
+    return this.registrationForm.get('birthday');
+  }
+
+  get cpf() {
+    return this.registrationForm.get('cpf');
+  }
+
+  get phone() {
+    return this.registrationForm.get('phone');
+  }
+
+  get email() {
+    return this.registrationForm.get('email');
+  }
+
+  get password() {
+    return this.registrationForm.get('password');
+  }
 }
