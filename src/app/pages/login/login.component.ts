@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   public blocked: boolean = false;
   public status: boolean = false;
 
+  public title: string = '';
   public message: string = '';
   public description: string = '';
 
@@ -55,38 +56,38 @@ export class LoginComponent implements OnInit {
       this.userData2 = value;
       this.searchObjectBlocked = this.userData2.find((user: any) => user.email == email);
 
+      if (!this.searchObjectBlocked || this.searchObjectBlocked.blocked === false) {
+        this.blocked = false;
+        this.checkBlocked(this.blocked);
+      }
+
       if (this.searchObjectBlocked.blocked === true) {
         this.blocked = true;
         this.checkBlocked(this.blocked);
-
-      } else {
-        this.blocked = false;
-        this.checkBlocked(this.blocked);
-
       }
     });
   }
 
   public checkBlocked(status: boolean): void {
     this.status = status;
-
     this.sendLogin();
   }
 
   public sendLogin(): void {
     if (this.status === true) {
+      this.title = 'USUÁRIO BLOQUEADO'
       this.message = 'Foram realizadas 3 tentativas incorretas de senha.';
-      this.description = 'Portanto, seu usuário está bloqueado. Entre em contato com o administrador.';
-      this.openDialogBlocked(this.message, this.description);
+      this.description = 'Entre em contato com o administrador.';
+      this.openDialogBlocked(this.title, this.message, this.description);
 
     } else {
       this.newUserStore.setFormLoginValue(this.loginForm.value);
     }
   }
 
-  public openDialogBlocked(message: string, description: string): void {
+  public openDialogBlocked(title: string, message: string, description: string): void {
     this.dialog.open(DialogComponent, {
-      data: { message: message, description: description }
+      data: { title: title, message: message, description: description }
     })
   }
 }

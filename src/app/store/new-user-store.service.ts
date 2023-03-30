@@ -28,6 +28,8 @@ export class NewUserStoreService {
 
   public loginAttempt: number = 0;
   public attempt: number = 3;
+
+  public title: string = '';
   public message: string = '';
   public description: string = '';
 
@@ -79,22 +81,25 @@ export class NewUserStoreService {
 
           if (err.error === 'Incorrect password' && this.loginAttempt < 3) {
             this.attempt -= 1;
+            this.title = 'LOGIN NÃO REALIZADO'
             this.message = 'Senha incorreta.';
-            this.openDialogRetry(this.message, this.attempt);
+            this.openDialogRetry(this.title, this.message, this.attempt);
           }
 
           if (err.error === 'Incorrect password' && this.loginAttempt >= 3) {
+            this.title = 'LOGIN NÃO REALIZADO'
             this.message = 'Foram realizadas 3 tentativas incorretas de senha.';
             this.description = 'Seu usuário foi bloqueado. Entre em contato com o administrador.';
             this.blockUser(formValue.email);
-            this.openDialogBlocked(this.message, this.description);
+            this.openDialogBlocked(this.title, this.message, this.description);
             this.loginAttempt = 0;
           }
 
           if (err.error === 'Cannot find user') {
+            this.title = 'LOGIN NÃO REALIZADO'
             this.message = 'Usuário não localizado.';
             this.description = 'Verifique o campo de e-mail e tente novamente.';;
-            this.openDialogBlocked(this.message, this.description);
+            this.openDialogBlocked(this.title, this.message, this.description);
           }
         },
       });
@@ -136,29 +141,15 @@ export class NewUserStoreService {
     this.FormLoginListenerSubject.next(formValue);
   }
 
-  public openDialogBlocked(message: string, description: string): void {
+  public openDialogBlocked(title: string, message: string, description: string): void {
     this.dialog.open(DialogComponent, {
-      data: { message: message, description: description }
+      data: { title: title, message: message, description: description }
     })
   }
 
-  public openDialogRetry(message: string, attempts: number): void {
+  public openDialogRetry(title: string, message: string, attempts: number): void {
     this.dialog.open(DialogComponent, {
-      data: { message: message, attempts: attempts }
+      data: { title: title, message: message, attempts: attempts }
     })
-  }
-
-  private verifyBlock(email: string): boolean {
-    this.userService.getUsers().subscribe((value) => {
-      this.userData2 = value;
-      this.searchObjectBlocked = this.userData2.find((user: any) => user.email == email);
-
-      if (this.searchObjectBlocked.blocked === true) {
-        this.blocked = true;
-      } else {
-        this.blocked = false;
-      }
-    });
-    return this.blocked;
   }
 }
