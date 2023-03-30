@@ -25,6 +25,8 @@ import { IConfig, NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask
 import { RegistrationConfirmationComponent } from './pages/registration-confirmation/registration-confirmation.component';
 import { ListComponent } from './components/list/list.component'
 import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -39,7 +41,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     WelcomePageComponent,
     RegistrationFormSecureComponent,
     RegistrationConfirmationComponent,
-    ListComponent
+    ListComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     NgxMaskDirective,
     NgxMaskPipe,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true }, { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, provideNgxMask()],
   bootstrap: [AppComponent]

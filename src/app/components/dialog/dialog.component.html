@@ -1,0 +1,12 @@
+<div class="dialog">
+  <div class="title-box">
+    <h1 mat-dialog-title class="title">LOGIN NÃO REALIZADO</h1>
+  </div>
+  <div mat-dialog-content class="content-dialog"> {{ data.message }}</div>
+  <div mat-dialog-content class="content-dialog" *ngIf="data.description"> {{ data.description }}</div>
+  <div mat-dialog-content class="content-dialog" *ngIf="data.attempts">{{ 'Tentativas restantes: ' + data.attempts +
+    "."}}</div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close class="button-voltar-btn">Fechar</button>
+  </div>
+</div>
