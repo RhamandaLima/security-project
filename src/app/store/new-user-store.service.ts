@@ -16,6 +16,12 @@ import { MatDialog } from '@angular/material/dialog';
   providedIn: 'root',
 })
 export class NewUserStoreService {
+  public userData!: User;
+  public userData2!: any;
+
+  public searchObjectBlocked: any;
+  public blocked: boolean = false;
+
   private userSubject!: BehaviorSubject<User>;
   private FormListenerSubject!: BehaviorSubject<User>;
   private FormLoginListenerSubject!: BehaviorSubject<UserLogin>;
@@ -80,7 +86,9 @@ export class NewUserStoreService {
           if (err.error === 'Incorrect password' && this.loginAttempt >= 3) {
             this.message = 'Foram realizadas 3 tentativas incorretas de senha.';
             this.description = 'Seu usuário foi bloqueado. Entre em contato com o administrador.';
+            this.blockUser(formValue.email);
             this.openDialogBlocked(this.message, this.description);
+            this.loginAttempt = 0;
           }
 
           if (err.error === 'Cannot find user') {
@@ -98,6 +106,20 @@ export class NewUserStoreService {
 
     this.userService.getUserData(id).subscribe((value) => {
       this.userSubject.next(value)
+    });
+  }
+
+  public blockUser(email: string): void {
+    const blocked: boolean = true;
+
+    this.userService.getUsers().subscribe((value) => {
+      this.userData2 = value;
+
+      const searchObject = this.userData2.find((user: any) => user.email == email);
+
+      this.userService.updateUserData(searchObject.id, searchObject.name, searchObject.birthday, searchObject.cpf, searchObject.phone, searchObject.email, searchObject.password, blocked).subscribe((value) => {
+        this.userSubject.next(value)
+      });
     });
   }
 
@@ -124,5 +146,19 @@ export class NewUserStoreService {
     this.dialog.open(DialogComponent, {
       data: { message: message, attempts: attempts }
     })
+  }
+
+  private verifyBlock(email: string): boolean {
+    this.userService.getUsers().subscribe((value) => {
+      this.userData2 = value;
+      this.searchObjectBlocked = this.userData2.find((user: any) => user.email == email);
+
+      if (this.searchObjectBlocked.blocked === true) {
+        this.blocked = true;
+      } else {
+        this.blocked = false;
+      }
+    });
+    return this.blocked;
   }
 }

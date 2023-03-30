@@ -5,7 +5,8 @@ export interface User {
   phone: string,
   email: string,
   password: string,
-  id?: number
+  id?: number,
+  blocked?: boolean;
 }
 
 export interface UserRequest {

@@ -23,4 +23,24 @@ export class UserListService {
   public getUserData(id: number): Observable<User> {
     return this.http.get<User>(`http://localhost:3000/users/${id}`);
   }
+
+  public getUsers(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/users');
+  }
+
+
+  public updateUserData(id: number, name: string, birthday: string, cpf: string, phone: string, email: string, password: string, blocked: boolean): Observable<User> {
+    const postUser: User = {
+      name: name,
+      birthday: birthday,
+      cpf: cpf,
+      phone: phone,
+      email: email,
+      password: password,
+      id: id,
+      blocked: blocked
+    }
+
+    return this.http.put<User>(`http://localhost:3000/users/${id}`, postUser);
+  }
 }

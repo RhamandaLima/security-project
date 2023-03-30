@@ -28,6 +28,7 @@ export class RegistrationFormSecureComponent implements OnInit {
 
   public createRegistrationForm(): void {
     this.registrationForm = this.fb.group({
+      blocked: [false],
       name: ['', [Validators.required, Validators.maxLength(100)]],
       birthday: ['', Validators.required],
       cpf: ['', [Validators.required, this.validateCpf]],

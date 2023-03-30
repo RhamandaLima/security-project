@@ -1,13 +1,3 @@
 {
-  "users": [
-    {
-      "email": "testando@gmail.com",
-      "password": "$2a$10$1lDwSroV5nacIXrXN5mUsuOk3UmkNrfzQsBna9va4JP1kZODqTUbG",
-      "name": "Testando Paiva",
-      "birthday": "2005-03-29T03:00:00.000Z",
-      "cpf": "59595959595",
-      "phone": "85989898989",
-      "id": 1
-    }
-  ]
+  "users": []
 }
