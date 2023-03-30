@@ -97,7 +97,7 @@ h1 {
   padding: 9px 100px;
   background-color: #1fa65a;
   border: none;
-  border-radius: 25px 10px;
+  border-radius: 77px 77px 24px 24px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -115,7 +115,7 @@ h1 {
   padding: 9px 100px;
   background-color: red;
   border: none;
-  border-radius: 10px 25px;
+  border-radius: 77px 77px 24px 24px;
   display: flex;
   align-items: center;
   gap: 4px;
