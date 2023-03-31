@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
   public sendLogin(): void {
     if (this.status === true) {
       this.title = 'USUÁRIO BLOQUEADO'
-      this.message = 'Foram realizadas 3 tentativas incorretas de senha.';
+      this.message = 'O seu acesso foi bloqueado devido a política de segurança.';
       this.description = 'Entre em contato com o administrador.';
       this.openDialogBlocked(this.title, this.message, this.description);
 

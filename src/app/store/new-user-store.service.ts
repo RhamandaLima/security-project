@@ -82,13 +82,13 @@ export class NewUserStoreService {
           if (err.error === 'Incorrect password' && this.loginAttempt < 3) {
             this.attempt -= 1;
             this.title = 'LOGIN NÃO REALIZADO'
-            this.message = 'Senha incorreta.';
+            this.message = 'Os dados informados estão incorretos.';
             this.openDialogRetry(this.title, this.message, this.attempt);
           }
 
           if (err.error === 'Incorrect password' && this.loginAttempt >= 3) {
             this.title = 'LOGIN NÃO REALIZADO'
-            this.message = 'Foram realizadas 3 tentativas incorretas de senha.';
+            this.message = 'Foram realizadas 3 tentativas de login com dados incorretos.';
             this.description = 'Seu usuário foi bloqueado. Entre em contato com o administrador.';
             this.blockUser(formValue.email);
             this.openDialogBlocked(this.title, this.message, this.description);
@@ -98,8 +98,9 @@ export class NewUserStoreService {
           if (err.error === 'Cannot find user') {
             this.title = 'LOGIN NÃO REALIZADO'
             this.message = 'Usuário não localizado.';
-            this.description = 'Verifique o campo de e-mail e tente novamente.';;
+            this.description = 'Verifique os dados e tente novamente.';;
             this.openDialogBlocked(this.title, this.message, this.description);
+
           }
         },
       });
